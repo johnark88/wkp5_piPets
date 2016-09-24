@@ -19,7 +19,7 @@ app.use('/', index);
 
 
 //data base connection
-var mongoURI = "mongodb://localhost:27017/assignments";
+var mongoURI = "mongodb://localhost:27017/piPets";
 mongoose.connect(mongoURI);
 
 
