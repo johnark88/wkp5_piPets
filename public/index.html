@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head ng-app="myApp">
     <meta charset="utf-8">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/clientscript.js" charset="utf-8"></script>
-    <title></title>
+    <script src="/scripts/controllers/addPetController.js" charset="utf-8"></script>
+    <title>Pi Pets</title>
   </head>
   <body>
+    <div ng-controller="piPetsHome"></div>
+
     Testing
+
+    <ul>
+        <li><a href="#viewAllPets"> Home </a></li>
+        <li><a href="#addPet"> Get all Assignments </a></li>
+      </ul>
+
+      <div ng-view></div>
   </body>
 </html>
