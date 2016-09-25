@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-  <head>
-    <meta charset="utf-8">
-    <script src="vendors/angular.min.js" charset="utf-8"></script>
-    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
-    <script src="scripts/clientscript.js" charset="utf-8"></script>
-    <script src="scripts/controllers/homeController.js" charset="utf-8"></script>
-    <script src="scripts/controllers/addPetController.js" charset="utf-8"></script>
-    <script src="scripts/controllers/viewAllPetsController.js" charset="utf-8"></script>
+<head>
+  <meta charset="utf-8">
+  <script src="vendors/angular.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+  <script src="scripts/clientscript.js" charset="utf-8"></script>
+  <script src="scripts/controllers/homeController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/addPetController.js" charset="utf-8"></script>
+  <script src="scripts/controllers/viewAllPetsController.js" charset="utf-8"></script>
 
 
-    <title>Pi Pets</title>
-  </head>
-  <body>
-    <div ng-controller="piPetsHome"></div>
+  <title>Pi Pets</title>
+</head>
+<body>
+  <div ng-controller="piPetsHome"></div>
 
-    Testing
+  <ul>  
+    <li><a href="#home"> Home </a></li>
+    <li><a href="#viewAllPets"> View All </a></li>
+    <li><a href="#addPet"> Add a New Pet </a></li>
+  </ul>
 
-    <ul>
-        <li><a href="#home"> Home </a></li>
-        <li><a href="#viewAllPets"> View All </a></li>
-        <li><a href="#addPet"> Add a New Pet </a></li>
-      </ul>
+  <main ng-view></main>
 
-      <main ng-view></main>
-
-  </body>
+</body>
 </html>
