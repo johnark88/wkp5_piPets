@@ -30,10 +30,8 @@ console.log('Listening my good sir ', portDecision);
 });
 
 // // app.get --  serves the index -- get params
-app.get("/", function(req,res){
-    console.log("Here is the property: ", req.params[0]);
-    var file = req.params[0] || "index.html";
-    res.sendFile(path.join(__dirname, "../public", file));
+app.get( '/', function( req, res ){
+res.sendFile( path.resolve( 'public/index.html' ) );
 });
 
 
@@ -68,3 +66,4 @@ app.post('/savePet', function(req,res){
   }
 });
 });
+app.use( express.static( 'public' ) );
