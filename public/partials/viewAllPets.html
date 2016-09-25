@@ -1,8 +1,9 @@
 <div ng-controller="viewAllPetsController">
   <div class="container" >
       <div ng-repeat="pet in allPiPets">
-          <p>Name is {{ pet.response }}</p>
-          <p>Pic {{ petPicURL.allPiPets }}</p>
+
+          <p>Name is {{ pet.animal }}</p>
+          <p>Pic {{ pet.petPicUrl }}</p>
       </div>
   </div>
 
