@@ -8,6 +8,7 @@
   <script src="scripts/controllers/homeController.js" charset="utf-8"></script>
   <script src="scripts/controllers/addPetController.js" charset="utf-8"></script>
   <script src="scripts/controllers/viewAllPetsController.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/style/stylesheet.css" media="screen" title="no title">
 
 
   <title>Pi Pets</title>
@@ -15,11 +16,11 @@
 <body>
   <div ng-controller="piPetsHome"></div>
 
-  <ul>  
-    <li><a href="#home"> Home </a></li>
-    <li><a href="#viewAllPets"> View All </a></li>
-    <li><a href="#addPet"> Add a New Pet </a></li>
-  </ul>
+  <div class="flex-container">
+    <div class="flex-item"><a href="#home"> Home </a></div>
+    <div class="flex-item"><a href="#viewAllPets"> View All </a></div>
+    <div class="flex-item"><a href="#addPet"> Add a New Pet </a></div>
+  </div>
 
   <main ng-view></main>
 

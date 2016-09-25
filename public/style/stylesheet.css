@@ -1,0 +1,26 @@
+/*.inlineList li {
+    display: inline;
+    margin-left: 20px;
+}
+ul {
+  border-style: outset;
+}*/
+.flex-container {
+  display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-center;
+    justify-content: flex-center;
+    width: 259px;
+    height: 100px;
+    background-color: cornflowerblue;
+}
+
+.flex-item {
+    ;
+    width: 90px;
+    height: 80px;
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration-color: white;
+}
