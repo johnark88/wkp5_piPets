@@ -5,6 +5,7 @@ var path = require('path');
 var app = express();
 var portDecision = process.env.PORT || 8081;
 var index = require('./routes/index');
+var allPets = require('./routes/allPets');
 
 //json body parser
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ console.log('Listening my good sir ', portDecision);
 
 //routes
 app.use('/', index);
+app.use('/allPets', allPets);
 
 
 //data base connection

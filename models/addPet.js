@@ -9,6 +9,6 @@ var newPetSchema = new Schema({
 });
 
 
-var Student = mongoose.model('pets', newPetSchema);
+var newPet = mongoose.model('pets', newPetSchema);
 
 module.exports = newPet;
