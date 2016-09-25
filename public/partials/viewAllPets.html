@@ -1,4 +1,10 @@
-<p ng-controller="viewAllPetsController">
-  This is viewAllPets
-  
-</p>
+<div ng-controller="viewAllPetsController">
+  <div class="container" >
+      <div ng-repeat="pet in allPiPets">
+          <p>Name is {{ pet.response }}</p>
+          <p>Pic {{ petPicURL.allPiPets }}</p>
+      </div>
+  </div>
+
+
+</div>
