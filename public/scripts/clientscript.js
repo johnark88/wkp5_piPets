@@ -2,12 +2,13 @@ console.log('js sourced');
 
 var myApp = angular.module('myApp', ['ngRoute']);
 
+//piPetsHome controller - basic home page
 myApp.controller('piPetsHome',['$scope',function($scope){
   console.log('NG');
 
 }]);
 
-
+//angular routing config for home page, add page and view all page 
 myApp.config(['$routeProvider',function ($routeProvider){
     $routeProvider.
     when ('/home',{
