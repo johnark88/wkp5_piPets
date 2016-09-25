@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded( { extended: true } );
 var path = require('path');
 var app = express();
 var portDecision = process.env.PORT || 8081;
@@ -28,25 +29,42 @@ app.listen(portDecision,function(){
 console.log('Listening my good sir ', portDecision);
 });
 
-//app.get --  serves the index -- get params
-app.get("/*", function(req,res){
+// // app.get --  serves the index -- get params
+app.get("/", function(req,res){
     console.log("Here is the property: ", req.params[0]);
     var file = req.params[0] || "index.html";
     res.sendFile(path.join(__dirname, "../public", file));
 });
 
 
-app.get('/viewAll', function(req,res){
+app.get('/viewAll', function (req,res){
 console.log('in get all router ');
-if (err) {
-  console.log(err);
-}else {
-  console.log('Connected to db!');
-  res.send(allPets);
-  console.log(allPets);
-}
+newPet.find({}, function(err, piPetResults) {
+    if(err){
+      console.log('error occurred:', err);
+      res.sendStatus(500);
+    }else{
+      res.send(piPetResults);
+      console.log(piPetResults);
+    }
+  });
 });
 
+var newPet = require('../models/addPet');
 
+app.post('/savePet', function(req,res){
+  console.log('in add pet post route');
 
-// app.pos
+  var piPet = newPet(req.body);
+  console.log('piPet : ', req.body);
+
+  piPet.save(function(err){
+  if (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }else {
+    console.log('connected to the db!');
+    res.sendStatus(200);
+  }
+});
+});
