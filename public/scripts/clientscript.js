@@ -6,8 +6,14 @@ myApp.controller('piPetsHome',['$scope',function($scope){
   console.log('NG');
 
 }]);
+
+
 myApp.config(['$routeProvider',function ($routeProvider){
     $routeProvider.
+    when ('/home',{
+      templateUrl: "partials/home.html",
+      controller: "homeController"
+    }).
     when ("/addPet",
       {templateUrl: "partials/addPet.html",
       controller: "addPetController"
@@ -17,6 +23,7 @@ myApp.config(['$routeProvider',function ($routeProvider){
       controller: "viewAllPetsController"
     }).
     otherwise({
-      redirectTo: "/"
+
+      redirectTo: "/home"
     });
   }]);

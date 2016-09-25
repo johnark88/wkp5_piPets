@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
-  <head ng-app="myApp">
+<html ng-app="myApp">
+  <head>
     <meta charset="utf-8">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/clientscript.js" charset="utf-8"></script>
-    <script src="/scripts/controllers/addPetController.js" charset="utf-8"></script>
+    <script src="scripts/controllers/homeController.js" charset="utf-8"></script>
+    <script src="scripts/controllers/addPetController.js" charset="utf-8"></script>
+    <script src="scripts/controllers/viewAllPetsController.js" charset="utf-8"></script>
+
+
     <title>Pi Pets</title>
   </head>
   <body>
@@ -14,10 +18,12 @@
     Testing
 
     <ul>
-        <li><a href="#viewAllPets"> Home </a></li>
-        <li><a href="#addPet"> Get all Assignments </a></li>
+        <li><a href="#home"> Home </a></li>
+        <li><a href="#viewAllPets"> View All </a></li>
+        <li><a href="#addPet"> Add a New Pet </a></li>
       </ul>
 
-      <div ng-view></div>
+      <main ng-view></main>
+
   </body>
 </html>
