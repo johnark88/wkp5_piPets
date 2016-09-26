@@ -9,6 +9,12 @@ myApp.controller('viewAllPetsController', ['$scope','$http' ,function($scope, $h
   }).then(function(response){
     $scope.allPiPets = response.data;
     console.log($scope.allPiPets);
-  });
+  });//end http get all
 
+
+// $http({
+//   method: 'DELETE',
+//   url: '/deletePet',
+//   data: ????
+// });//end http to delete selected record
 }]);//end viewAllPetsController
