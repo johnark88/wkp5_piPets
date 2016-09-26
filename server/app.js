@@ -5,6 +5,7 @@ var urlencodedParser = bodyParser.urlencoded( { extended: true } );
 var path = require('path');
 var app = express();
 var portDecision = process.env.PORT || 8081;
+
 // routes
 // var index = require('./routes/index');
 // var allPets = require('./routes/allPets');
@@ -67,10 +68,22 @@ app.post('/savePet', function(req,res){
 });//end save pet to database
 });//end app.post
 
+var deletePet = require('../models/deletePet');
 app.delete('/deletePet', function(req,res){
+
 console.log('in app delete route');
-var id = req.body.id;
+var id = req.body;
 console.log(id,'wreck dot body!!!');
+mongoURI.remove({_id : id }, function(err) {
+    if(err){
+      console.log('error occurred:', err);
+      res.sendStatus(500);
+    }else
+    {
+      console.log('connected to te DB');
+      res.sendStatus(200);
+    }//end else
+  });//end database query
 });
 
 //use this for index.html
