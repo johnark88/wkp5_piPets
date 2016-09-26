@@ -67,5 +67,10 @@ app.post('/savePet', function(req,res){
 });//end save pet to database
 });//end app.post
 
+app.delete('/deletePet', urlencodedParser, function(req,res){
+console.log('in app delete route');
+console.log(req.body,'wreck dot body!!!');
+});
 
+//use this for index.html
 app.use( express.static( 'public' ) );

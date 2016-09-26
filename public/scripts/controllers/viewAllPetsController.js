@@ -18,12 +18,13 @@ $scope.deletePet =function(_id){
     id:_id
   };//end remove pet object
 console.log(removePet,'000000000000000');
+
+$http({
+  method: 'DELETE',
+  url: '/deletePet',
+  data: removePet
+}).then(function(response){
+  console.log(response);
+});
 };
-// $http({
-//   method: 'DELETE',
-//   url: '/deletePet',
-//   data: removePet
-// }).then(function(respons){
-//   console.log(response);
-// });
 }]);//end viewAllPetsController
