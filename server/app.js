@@ -7,7 +7,7 @@ var app = express();
 var portDecision = process.env.PORT || 8081;
 
 // routes
-// var index = require('./routes/index');
+var index = require('./routes/index');
 // var allPets = require('./routes/allPets');
 // var savePets = require('./routes/savePets');
 
@@ -16,7 +16,7 @@ var portDecision = process.env.PORT || 8081;
 app.use(bodyParser.json());
 
 // //routes
-// app.use('/', index);
+app.use('/', index);
 // app.use('/viewAll', allPets)
 // app.use('/savePets', savePets);
 
@@ -31,9 +31,9 @@ console.log('Listening my good sir ', portDecision);
 });
 
 // // app.get --  serves the index -- get params
-app.get( '/', function( req, res ){
-res.sendFile( path.resolve( 'public/index.html' ) );
-});
+// app.get( '/', function( req, res ){
+// res.sendFile( path.resolve( 'public/index.html' ) );
+// });
 
 //app.get view all
 app.get('/viewAll', function (req,res){
@@ -63,7 +63,7 @@ app.post('/savePet', function(req,res){
     res.sendStatus(500);
   }else {
     console.log('connected to the db!');
-    res.sendStatus(200);
+    res.sendStatus(20);
   }//end else
 });//end save pet to database
 });//end app.post
@@ -74,7 +74,7 @@ app.delete('/deletePet', function(req,res){
 console.log('in app delete route');
 var id = req.body;
 console.log(id,'wreck dot body!!!');
-mongoURI.remove({_id : id }, function(err) {
+newPet.remove({_id : id }, function(err) {
     if(err){
       console.log('error occurred:', err);
       res.sendStatus(500);
@@ -86,5 +86,5 @@ mongoURI.remove({_id : id }, function(err) {
   });//end database query
 });
 
-//use this for index.html
+// //use this for index.html
 app.use( express.static( 'public' ) );
