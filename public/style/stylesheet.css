@@ -5,6 +5,9 @@
 ul {
   border-style: outset;
 }*/
+body{
+  background-color: #7e7d7d;
+}
 .flex-container {
   display: -webkit-flex;
     display: flex;

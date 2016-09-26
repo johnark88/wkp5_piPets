@@ -1,7 +1,7 @@
 myApp.controller('viewAllPetsController', ['$scope','$http' ,function($scope, $http){
   console.log('viewAllPets is here');
 
-// http request to get all pets from db 
+// http request to get all pets from db
   $scope.allPiPets=[];
   $http ({
     method: 'GET',
