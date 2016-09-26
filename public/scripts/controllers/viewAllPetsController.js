@@ -12,9 +12,18 @@ myApp.controller('viewAllPetsController', ['$scope','$http' ,function($scope, $h
   });//end http get all
 
 
+$scope.deletePet =function(_id){
+  // console.log(_id,'--=-=-=-=-=-=-=-=-=-=-=-');
+  var removePet = {
+    id:_id
+  };//end remove pet object
+console.log(removePet,'000000000000000');
+};
 // $http({
 //   method: 'DELETE',
 //   url: '/deletePet',
-//   data: ????
-// });//end http to delete selected record
+//   data: removePet
+// }).then(function(respons){
+//   console.log(response);
+// });
 }]);//end viewAllPetsController

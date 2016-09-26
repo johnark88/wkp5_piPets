@@ -34,7 +34,7 @@ app.get( '/', function( req, res ){
 res.sendFile( path.resolve( 'public/index.html' ) );
 });
 
-
+//app.get view all
 app.get('/viewAll', function (req,res){
 console.log('in get all router ');
 newPet.find({}, function(err, piPetResults) {
@@ -44,9 +44,9 @@ newPet.find({}, function(err, piPetResults) {
     }else{
       res.send(piPetResults);
       console.log(piPetResults);
-    }
-  });
-});
+    }//end else
+  });//end database query
+});//end app.get
 
 var newPet = require('../models/addPet');
 
@@ -63,7 +63,9 @@ app.post('/savePet', function(req,res){
   }else {
     console.log('connected to the db!');
     res.sendStatus(200);
-  }
-});
-});
+  }//end else
+});//end save pet to database
+});//end app.post
+
+
 app.use( express.static( 'public' ) );
