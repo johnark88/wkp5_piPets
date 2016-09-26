@@ -68,23 +68,20 @@ app.post('/savePet', function(req,res){
 });//end save pet to database
 });//end app.post
 
-var deletePet = require('../models/deletePet');
-app.delete('/deletePet', function(req,res){
 
-console.log('in app delete route');
-var id = req.body;
-console.log(id,'wreck dot body!!!');
-newPet.remove({_id : id }, function(err) {
-    if(err){
-      console.log('error occurred:', err);
-      res.sendStatus(500);
-    }else
-    {
-      console.log('connected to te DB');
-      res.sendStatus(200);
-    }//end else
-  });//end database query
-});
+app.delete('/deletePet/:id', function(req,res){
+
+  console.log("params = ", req.params);
+     newPet.remove({"_id": req.params.id}, function(err) {
+       if(err){
+         console.log('error occurred:', err);
+         res.sendStatus(500);
+       }else{
+         console.log('removed=', req.params.id);
+         res.sendStatus(200);
+       }
+     });
+ });
 
 // //use this for index.html
 app.use( express.static( 'public' ) );

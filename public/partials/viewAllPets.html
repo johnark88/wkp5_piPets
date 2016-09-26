@@ -1,13 +1,13 @@
   <div ng-controller="viewAllPetsController">
     <div class="container" >
         <div ng-repeat="pet in allPiPets">
-          <img src="{{ pet.petPicURL }}" />
+          <img ng-src="{{ pet.petPicURL }}" />
             <!-- <a href="{{ pet.petPicURL }}"> Pet Pic </a> -->
             <p>Name is: {{ pet.pet_name}}</p>
             <p>Age: {{ pet.age}}</p>
             <p>It is a very cute: {{ pet.animal}}</p>
             <!-- <p>Id in DB is: {{pet._id}}</p> -->
-            <input type="button" data-id="{{pet._id}}" ng-click="deletePet(pet._id)"value="Delete">
+            <input type="button" ng-click="deletePet(pet._id)"value="Delete">
             -------------------------------------------
 
         </div>
