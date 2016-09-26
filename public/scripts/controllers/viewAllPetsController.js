@@ -22,7 +22,8 @@ console.log(removePet,'000000000000000');
 $http({
   method: 'DELETE',
   url: '/deletePet',
-  data: removePet
+  data: removePet,
+  headers: {"Content-Type": "application/json;charset=utf-8"} //http://stackoverflow.com/a/23919029/6844212
 }).then(function(response){
   console.log(response);
 });

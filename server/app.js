@@ -67,9 +67,10 @@ app.post('/savePet', function(req,res){
 });//end save pet to database
 });//end app.post
 
-app.delete('/deletePet', urlencodedParser, function(req,res){
+app.delete('/deletePet', function(req,res){
 console.log('in app delete route');
-console.log(req.body,'wreck dot body!!!');
+var id = req.body.id;
+console.log(id,'wreck dot body!!!');
 });
 
 //use this for index.html
