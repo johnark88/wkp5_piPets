@@ -21,6 +21,7 @@ $http ({
   $scope.serverRes = response.data;
   console.log($scope.serverRes, "response from server to display");
 });//end then function
+
 //resets form on submit
 $scope.petName = null;
 $scope.animalType = null;
