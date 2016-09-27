@@ -20,6 +20,9 @@ app.use('/savePet', savePets);
 var index = require('./routes/index');
 app.use('/', index);
 
+var deletePet = require('./routes/deletePet');
+app.use('/deletePet/:id', deletePet);
+
 
 //data base connection
 var mongoURI = "mongodb://localhost:27017/piPets";
@@ -33,19 +36,7 @@ app.listen(portDecision,function(){
 
 
 
-//app delete function
-app.delete('/deletePet/:id', function(req,res){
-  console.log("params = ", req.params);
-  newPet.remove({"_id": req.params.id}, function(err) {
-    if(err){
-      console.log('error occurred:', err);
-      res.sendStatus(500);
-    }else{
-      console.log('removed=', req.params.id);
-      res.sendStatus(200);
-    }
-  });
-});
+
 
 // //use this for index.html
 app.use( express.static( 'public' ) );

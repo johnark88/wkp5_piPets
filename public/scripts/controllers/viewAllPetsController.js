@@ -11,6 +11,7 @@ myApp.controller('viewAllPetsController', ['$scope','$http' ,function($scope, $h
     console.log($scope.allPiPets);
   });//end http get all
 
+
 // Delete Pet scope and http request
 $scope.deletePet = function(id){
   console.log('clicked delete', id );
@@ -21,7 +22,7 @@ $scope.deletePet = function(id){
         console.log('delete res =', response);
       }, function errorCallback(response) {
         console.log('err');
-        $window.reload();
+        // $window.reload();
       });
 
     };
