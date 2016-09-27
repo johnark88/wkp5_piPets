@@ -21,7 +21,7 @@ var index = require('./routes/index');
 app.use('/', index);
 
 var deletePet = require('./routes/deletePet');
-app.use('/deletePet/:id', deletePet);
+app.use('/deletePet', deletePet);
 
 
 //data base connection

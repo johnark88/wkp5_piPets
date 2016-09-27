@@ -22,7 +22,7 @@ $scope.deletePet = function(id){
         console.log('delete res =', response);
       }, function errorCallback(response) {
         console.log('err');
-        // $window.reload();
+
       });
 
     };

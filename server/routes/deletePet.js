@@ -5,7 +5,7 @@ var router = express.Router();
 var newPet = require('../../models/addPet');
 
 //app delete function
-router.delete('/', function(req,res){
+router.delete('/:id', function(req,res){
   console.log("params = ", req.params);
   newPet.remove({"_id": req.params.id}, function(err) {
     if(err){
